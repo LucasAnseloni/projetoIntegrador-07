@@ -9,7 +9,8 @@ export class ServicosComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(){
+  ngOnInit() {
+    window.scroll(0,0)
   }
 
 }

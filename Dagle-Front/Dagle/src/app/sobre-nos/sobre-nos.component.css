@@ -1,12 +1,5 @@
-.bg-mvv{
-    background-color: #0077E7;
-}
-
-.bg-do-mvv{
-    background: #98C7FF;
-}
 .bg-faixa{
-    background-color: #83b2f0;
+    background-color: #288ccf;
 }
 .fs-28{
     font-size: 28px;
@@ -24,7 +17,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background-color: #6eaefd;
+    background-color: #1381ca;
     min-height: 100vh;
 }
 section{
