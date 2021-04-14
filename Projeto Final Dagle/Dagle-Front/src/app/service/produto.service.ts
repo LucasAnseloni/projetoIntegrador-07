@@ -19,23 +19,23 @@ export class ProdutoService {
   }
 
   getAllProdutos(): Observable<Produto[]>{
-    return this.http.get<Produto[]>('https://dagle-project.herokuapp.com/produtos', this.token)
+    return this.http.get<Produto[]>('http://localhost:8080/produtos', this.token)
   }
   
   getAllCategoriaDoUsuario(idUsuario: number, idCategoria: number): Observable<Produto[]>{
-    return this.http.get<Produto[]>(`https://dagle-project.herokuapp.com/produtos/all/${idUsuario}/${idCategoria}`, this.token)
+    return this.http.get<Produto[]>(`http://localhost:8080/produtos/all/${idUsuario}/${idCategoria}`, this.token)
   }
 
   getAllProdutosDoUsuario(idUsuario: number): Observable<Produto[]>{
-    return this.http.get<Produto[]>(`https://dagle-project.herokuapp.com/produtos/all/${idUsuario}`, this.token)
+    return this.http.get<Produto[]>(`http://localhost:8080/produtos/all/${idUsuario}`, this.token)
   }
 
   getByIdProdutos(id: number): Observable<Produto>{
-    return this.http.get<Produto>(`https://dagle-project.herokuapp.com/produtos/${id}`, this.token)
+    return this.http.get<Produto>(`http://localhost:8080/produtos/${id}`, this.token)
   }
 
   getByNomeProduto(nome: string): Observable<Produto[]>{
-    return this.http.get<Produto[]>(`https://dagle-project.herokuapp.com/produtos/nome/${nome}`, this.token)
+    return this.http.get<Produto[]>(`http://localhost:8080/produtos/nome/${nome}`, this.token)
   }
 
   postProdutos(produto: Produto): Observable<Produto> {
@@ -43,15 +43,15 @@ export class ProdutoService {
     if(produto.foto === undefined) {
       produto.foto = 'https://i.imgur.com/aPALXXi.png'
     }
-      return this.http.post<Produto>('https://dagle-project.herokuapp.com/produtos', produto, this.token ) 
+      return this.http.post<Produto>('http://localhost:8080/produtos', produto, this.token ) 
     }
 
   putProdutos(produto: Produto): Observable<Produto>{
-    return this.http.put<Produto>('https://dagle-project.herokuapp.com/produtos', produto, this.token)
+    return this.http.put<Produto>('http://localhost:8080/produtos', produto, this.token)
   }
 
   deleteProduto(id: number){
-    return this.http.delete(`https://dagle-project.herokuapp.com/produtos/${id}`, this.token)
+    return this.http.delete(`http://localhost:8080/produtos/${id}`, this.token)
   }
 
 

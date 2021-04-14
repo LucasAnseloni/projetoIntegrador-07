@@ -36,6 +36,11 @@ public class ProdutoController {
 		return ResponseEntity.ok(repository.buscarProdutoPorIdUsuarioIdCategoria(idUsuario, idCategoria));
 	}
 	
+	@GetMapping("/all/{idUsuario}")
+	public ResponseEntity<List<Produto>> GetAllProdutosByIdUsuario(@PathVariable long idUsuario){
+		return ResponseEntity.ok(repository.buscarProdutoPorIdUsuario(idUsuario));
+	}
+	
 	@GetMapping("/{id}")
 	public ResponseEntity<Produto> GetById (@PathVariable long id){
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());

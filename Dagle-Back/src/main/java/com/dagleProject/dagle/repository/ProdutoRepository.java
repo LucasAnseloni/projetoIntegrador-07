@@ -14,7 +14,11 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 	public List<Produto> findAllByNomeContainingIgnoreCase(String nome);
 	
 	//teste
-@Query(value = "SELECT * FROM dagle.produto where usuario_id = :idUsuario and categoria_id = :idCategoria", nativeQuery = true)
+@Query(value = "SELECT * FROM produto where usuario_id = :idUsuario and categoria_id = :idCategoria", nativeQuery = true)
 public List<Produto> buscarProdutoPorIdUsuarioIdCategoria(@Param("idUsuario") long idUsuario,@Param("idCategoria") long idCategoria);
+
+
+@Query(value = "SELECT * FROM produto where usuario_id = :idUsuario", nativeQuery = true)
+public List<Produto> buscarProdutoPorIdUsuario(@Param("idUsuario") long idUsuario);
 
 }

@@ -15,7 +15,8 @@ export class AlertasComponent implements OnInit {
     public modal: BsModalRef
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
+    window.scroll(0,0)
   }
 
   onClose(){

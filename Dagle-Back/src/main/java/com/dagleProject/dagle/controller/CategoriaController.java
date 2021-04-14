@@ -48,8 +48,13 @@ public class CategoriaController {
 	
 	@PutMapping
 	public ResponseEntity<Categoria> Put (@RequestBody Categoria categoria){
-		return ResponseEntity.status(HttpStatus.OK).body(repository.save(categoria));
+		return ResponseEntity.ok(repository.save(categoria));
 	}
+	
+	/*@PutMapping
+	public void Put (@RequestBody Categoria categoria){
+		repository.updateCategoria(categoria.getNome(),categoria.getSetor(), categoria.getId());
+	}*/
 	
 	@DeleteMapping("/{id}")
 	public void delete (@PathVariable long id) {

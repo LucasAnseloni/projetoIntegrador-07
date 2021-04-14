@@ -15,27 +15,27 @@ export class CategoriaService {
  }
 
  getAllCategoria(): Observable<Categoria[]>{
-   return this.http.get<Categoria[]>('https://dagle-project.herokuapp.com/categorias', this.token)
+   return this.http.get<Categoria[]>('http://localhost:8080/categorias', this.token)
  }
 
  getByIdCategoria(id: number): Observable<Categoria>{
-   return this.http.get<Categoria>(`https://dagle-project.herokuapp.com/categorias/${id}`, this.token)
+   return this.http.get<Categoria>(`http://localhost:8080/categorias/${id}`, this.token)
  }
 
  getByNomeCategoria(nome: string): Observable<Categoria[]>{
-   return this.http.get<Categoria[]>(`https://dagle-project.herokuapp.com/categorias/nome/${nome}`, this.token)
+   return this.http.get<Categoria[]>(`http://localhost:8080/categorias/nome/${nome}`, this.token)
  }
 
  postCategoria(categoria: Categoria): Observable<Categoria>{
-   return this.http.post<Categoria>('https://dagle-project.herokuapp.com/categorias', categoria, this.token)
+   return this.http.post<Categoria>('http://localhost:8080/categorias', categoria, this.token)
  }
 
  putCategoria( categoria: Categoria): Observable<Categoria>{
-   return this.http.put<Categoria>('https://dagle-project.herokuapp.com/categorias', categoria, this.token)
+   return this.http.put<Categoria>('http://localhost:8080/categorias', categoria, this.token)
  }
 
  deleteCategoria(id: number){
-  return this.http.delete<Categoria>(`https://dagle-project.herokuapp.com/categorias/${id}`, this.token) 
+  return this.http.delete<Categoria>(`http://localhost:8080/categorias/${id}`, this.token) 
  }
 }
 

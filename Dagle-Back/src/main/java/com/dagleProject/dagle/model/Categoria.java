@@ -24,14 +24,10 @@ public class Categoria {
 	private long id;
 	
 	@NotNull
-	@Size(min = 2, max = 60)
+	@Size(min = 2, max = 100)
 	private String nome;
 	
-	@NotNull
-	@Size(min = 2, max = 80)
-	private String setor;
-	
-	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "categoria", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("categoria")
 	private List<Produto> produto;
 
@@ -50,14 +46,6 @@ public class Categoria {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public String getSetor() {
-		return setor;
-	}
-
-	public void setSetor(String setor) {
-		this.setor = setor;
 	}
 
 	public List<Produto> getProduto() {
